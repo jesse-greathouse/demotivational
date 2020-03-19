@@ -7,32 +7,23 @@ A simple example application which uses the greathouse-openresty boilerplate.
 These instructions assume that you've already created a useable database for your application, along with having the required credentials. If you do not need a database, you can ignore the database credentials or set them as placeholders for later. If you need help on creating a database, you can [learn how, here](https://www.postgresql.org/docs/10/tutorial-install.html).
 
 * Download the git repository
-    * `git clone https://github.com/jesse-greathouse/greathouse-openresty`
-* Change to the greathouse-openresty directory
-    * `cd greathouse-openresty`
+    * `git clone https://github.com/jesse-greathouse/demotivational`
+* Change to the demotivational directory
+    * `cd demotivational`
 
 ## Docker Installation
-* The easiest way to run greathouse-openresty is with Docker. You will need to install docker on your web host. Check the [Official Docker Site](https://docs.docker.com/engine/installation/) on how to install Docker on your host.
-    * [Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntu/)
-    * [Red Hat Enterprise Linux](https://docs.docker.com/engine/installation/linux/rhel/)
-    * [CentOs](https://docs.docker.com/engine/installation/linux/centos/)
-    * [Fedora](https://docs.docker.com/engine/installation/linux/fedora/)
-    * [Debian](https://docs.docker.com/engine/installation/linux/debian/)
-    * [OSX](https://docs.docker.com/docker-for-mac/install/)
-    * [Windows](https://docs.docker.com/docker-for-windows/install/)
-    * [Docker EE for Windows Server](https://docs.docker.com/docker-ee-for-windows/install/)
-    * [Docker-AWS](https://docs.docker.com/docker-for-aws/)
-    * [Docker-Azure](https://docs.docker.com/docker-for-azure/)
+* The easiest way to run the application  is with Docker. You will need to install docker on your host. Check the [Official Docker Site](https://docs.docker.com/engine/installation/) on how to install Docker on your host.
 * Run the configuration script
     * `bin/configure-docker.sh`
+* Run the "run" script
+    * `bin/run-docker.sh`
+* check [http://localhost:3000/](http://localhost:3000/)
+    * You may have changed the designated port during configuration. If that's the case, use the port you specified.
 
 
 # Docker Management Instructions
 ## Building the App
-    docker build -t jessegreathouse/greathouse-openresty .
-
-## Pushing the App
-    docker push jessegreathouse/greathouse-openresty
+    docker build -t jessegreathouse/demotivational .
 
 ## Running the APP
     docker run -d -p 3000:3000 \
@@ -60,7 +51,7 @@ These instructions assume that you've already created a useable database for you
         -v $(pwd)/etc/nginx/nginx.conf:/app/etc/nginx/nginx.conf \
         --restart no \
         --name my-site \
-        jessegreathouse/greathouse-openresty
+        jessegreathouse/demoticational
 
 * check [http://localhost:3000/](http://localhost:3000/)
 
