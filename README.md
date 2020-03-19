@@ -1,5 +1,8 @@
-greathouse-openresty
+Demotivational
 ====
+
+# A simple example application which uses the greathouse-openresty boilerplate.
+
 # How to Install
 These instructions assume that you've already created a useable database for your application, along with having the required credentials. If you do not need a database, you can ignore the database credentials or set them as placeholders for later. If you need help on creating a database, you can [learn how, here](https://www.postgresql.org/docs/10/tutorial-install.html).
 
