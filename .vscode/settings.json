@@ -1,8 +1,0 @@
-{
-    "Lua.diagnostics.globals": [
-        "cjson",
-        "ngx",
-        "_ENV"
-    ],
-    "Lua.runtime.version": "LuaJIT"
-}
