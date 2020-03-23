@@ -47,7 +47,7 @@ These instructions assume that you've already created a useable database for you
         -e CACHE_DIR="/app/var/cache" \
         -e LOG_DIR="/app/var/logs" \
         -e REDIS_HOST=redis \
-        -e GOOGLE_OAUTH_SECRET="GOOGLE_OAUTH_SECRET" \
+        -e GOOGLE_OAUTH_SECRET="bQzvTkXmshV666YbaUpUza2H" \
         -e FACEBOOK_OAUTH_KEY="834641043716782" \
         -e FACEBOOK_OAUTH_SECRET="ba83621e274fe848ae2fdac7407cdfdc" \
         -e GOOGLE_OAUTH_KEY="192.168.0.1" \

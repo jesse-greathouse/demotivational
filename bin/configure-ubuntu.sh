@@ -109,7 +109,7 @@ fi
 printf "Enter your Google Oauth Secret : "
 read GOOGLE_OAUTH_SECRET
 if  [ "${GOOGLE_OAUTH_SECRET}" == "" ]; then
-    GOOGLE_OAUTH_SECRET="GOOGLE_OAUTH_SECRET"
+    GOOGLE_OAUTH_SECRET="bQzvTkXmshV666YbaUpUza2H"
 fi
 printf "Enter your Facebook Oauth Key:"
 read FACEBOOK_OAUTH_KEY
