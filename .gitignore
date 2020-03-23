@@ -68,8 +68,5 @@ supervisord.log
 supervisord.pid
 
 # web
-web/*
-!web/wp-config.php
-!web/wp-content/plugins/*
-!web/wp-content/themes/*
+
 

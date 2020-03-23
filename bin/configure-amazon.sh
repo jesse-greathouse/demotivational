@@ -91,25 +91,30 @@ read PORT
 if  [ "${PORT}" == "" ]; then
     PORT="80"
 fi
-printf "Enter your database host [127.0.0.1]: "
-read DB_HOST
-if  [ "${DB_HOST}" == "" ]; then
-    DB_HOST="127.0.0.1"
+printf "Enter your Google Search Key: "
+read GOOGLE_SEARCH_KEY
+if  [ "${GOOGLE_SEARCH_KEY}" == "" ]; then
+    GOOGLE_SEARCH_KEY="AIzaSyCCqmz99T_8_6_ZDgkZqoD2ACWG9wmXEdE"
 fi
-printf "Enter your database name [db_name]: "
-read DB_NAME
-if  [ "${DB_NAME}" == "" ]; then
-    DB_NAME="db_name"
+printf "Enter your Google Oauth Key: "
+read GOOGLE_OAUTH_KEY
+if  [ "${GOOGLE_OAUTH_KEY}" == "" ]; then
+    GOOGLE_OAUTH_KEY="248720560989-hre42f9t6is8evgqfhkr3hc8uqq7pg5c.apps.googleusercontent.com"
 fi
-printf "Enter your database user [db_user]: "
-read DB_USER
-if  [ "${DB_USER}" == "" ]; then
-    DB_USER="db_user"
+printf "Enter your Google Oauth Secret : "
+read GOOGLE_OAUTH_SECRET
+if  [ "${GOOGLE_OAUTH_SECRET}" == "" ]; then
+    GOOGLE_OAUTH_SECRET="GOOGLE_OAUTH_SECRET"
 fi
-printf "Enter your database password [db_password]: "
-read DB_PASSWORD
-if  [ "${DB_PASSWORD}" == "" ]; then
-    DB_PASSWORD="db_password"
+printf "Enter your Facebook Oauth Key:"
+read FACEBOOK_OAUTH_KEY
+if  [ "${FACEBOOK_OAUTH_KEY}" == "" ]; then
+    FACEBOOK_OAUTH_KEY="834641043716782"
+fi
+printf "Enter your Facebook Oauth Secret: "
+read FACEBOOK_OAUTH_SECRET
+if  [ "${FACEBOOK_OAUTH_SECRET}" == "" ]; then
+    FACEBOOK_OAUTH_SECRET="ba83621e274fe848ae2fdac7407cdfdc"
 fi
 printf "Force visitors to https? (y or n): "
 read -n 1 FORCE_SSL
@@ -130,12 +135,14 @@ printf "\n"
 printf "Site Name: ${SITE_NAME} \n"
 printf "Site Domains: ${SITE_DOMAINS} \n"
 printf "Web Port: ${PORT} \n"
-printf "Database Host: ${DB_HOST} \n"
-printf "Database Name: ${DB_NAME} \n"
-printf "Database User: ${DB_USER} \n"
-printf "Database Password: ${DB_PASSWORD} \n"
+printf "Google Search Engine ID: ${GOOGLE_SEARCH_ENGINE_ID} \n"
+printf "Google Search Key: ${GOOGLE_SEARCH_KEY} \n"
+printf "Google Oauth Key: ${GOOGLE_OAUTH_KEY} \n"
+printf "Google Oauth Secret: ${GOOGLE_OAUTH_SECRET} \n"
+printf "Facebook Oauth Key: ${FACEBOOK_OAUTH_KEY} \n"
+printf "Facebook Oauth Secret: ${FACEBOOK_OAUTH_SECRET} \n"
 printf "Force Https: ${FORCE_SSL} \n"
-printf "Server Timezone: ${DATE_TIMEZONE} \n"
+
 printf "\n"
 printf "Is this correct (y or n): "
 read -n 1 CORRECT
@@ -151,10 +158,12 @@ if  [ "${CORRECT}" == "y" ]; then
     sed -i '1 a PATH=/usr/local/bin:$PATH' ${RUN_SCRIPT}
     sed -i -e s/__SITE_NAME__/"${SITE_NAME}"/g ${RUN_SCRIPT}
     sed -i -e s/__PORT__/"${PORT}"/g ${RUN_SCRIPT}
-    sed -i -e s/__DB_HOST__/"${DB_HOST}"/g ${RUN_SCRIPT}
-    sed -i -e s/__DB_NAME__/"${DB_NAME}"/g ${RUN_SCRIPT}
-    sed -i -e s/__DB_USER__/"${DB_USER}"/g ${RUN_SCRIPT}
-    sed -i -e s/__DB_PASSWORD__/"${DB_PASSWORD}"/g ${RUN_SCRIPT}
+    sed -i -e s/__GOOGLE_SEARCH_ENGINE_ID__/"${GOOGLE_SEARCH_ENGINE_ID}"/g ${RUN_SCRIPT}
+    sed -i -e s/__GOOGLE_SEARCH_KEY__/"${GOOGLE_SEARCH_KEY}"/g ${RUN_SCRIPT}
+    sed -i -e s/__GOOGLE_OAUTH_KEY__/"${GOOGLE_OAUTH_KEY}"/g ${RUN_SCRIPT}
+    sed -i -e s/__GOOGLE_OAUTH_SECRET__/"${GOOGLE_OAUTH_SECRET}"/g ${RUN_SCRIPT}
+    sed -i -e s/__FACEBOOK_OAUTH_KEY__/"${FACEBOOK_OAUTH_KEY}"/g ${RUN_SCRIPT}
+    sed -i -e s/__FACEBOOK_OAUTH_SECRET__/"${FACEBOOK_OAUTH_SECRET}"/g ${RUN_SCRIPT}
     sed -i -e s/__FORCE_SSL__/"${FORCE_SSL}"/g ${RUN_SCRIPT}
     chmod +x ${RUN_SCRIPT}
 

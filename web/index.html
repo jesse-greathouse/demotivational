@@ -1,0 +1,29 @@
+<figure class="figure">
+    <img id="demotivational-image" data-search-url="{{ search_url }}" src="/img/progress-bar.gif" class="figure-img img-fluid rounded" alt="Demotivational image for {{user.first_name}}">
+    <figcaption class="figure-caption text-right">{{user.first_name}}, your demotivational.</figcaption>
+</figure>
+
+<script>
+    function letsGetRandy(arr) {
+        var rand = Math.floor((Math.random() * arr.length) + 1);
+        return arr[(rand - 1)];
+    }
+
+    function indexInit() {
+        var $demotivationalImage = $('#demotivational-image');
+        var searchUrl = $demotivationalImage.data('search-url');
+        $.get(searchUrl, function(data) {
+            var selected = letsGetRandy(data.items);
+            var selectedImage = letsGetRandy(selected.pagemap.cse_image);
+            $demotivationalImage.attr('src', selectedImage.src);
+            $demotivationalImage.one('load', function() {}).each(function() {
+                if (this.complete) {
+                    $demotivationalPreloader.css('display', 'none');
+                    $demotivationalImage.css('display', 'block')
+                }
+            });
+        });
+
+        
+    }
+</script>

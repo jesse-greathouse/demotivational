@@ -41,10 +41,10 @@ These instructions assume that you've already created a useable database for you
         -e CACHE_DIR="/app/var/cache" \
         -e LOG_DIR="/app/var/logs" \
         -e REDIS_HOST=redis \
-        -e DB_NAME="db_name" \
-        -e DB_USER="db_user" \
-        -e DB_PASSWORD="db_password" \
-        -e DB_HOST="192.168.0.1" \
+        -e GOOGLE_OAUTH_SECRET="GOOGLE_OAUTH_SECRET" \
+        -e FACEBOOK_OAUTH_KEY="834641043716782" \
+        -e FACEBOOK_OAUTH_SECRET="ba83621e274fe848ae2fdac7407cdfdc" \
+        -e GOOGLE_OAUTH_KEY="192.168.0.1" \
         -e DB_PORT=3306 \
         -v $(pwd)/error.log:/app/error.log \
         -v $(pwd)/supervisord.log:/app/supervisord.log \
