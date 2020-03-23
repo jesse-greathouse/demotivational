@@ -20,7 +20,7 @@
 #   +---------------------------------------------------------------------------------+
 
 FROM alpine:3.8
-MAINTAINER Jesse Greathouse <jesse.greathouse@gmail.com>
+LABEL maintainer="Jesse Greathouse <jesse.greathouse@gmail.com>"
 
 ENV PATH /app/bin:$PATH
 
