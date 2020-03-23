@@ -77,10 +77,10 @@ printf "=================================================================\n"
 printf "Hello, "${USER}".  This will create your site's run script\n"
 printf "=================================================================\n"
 printf "\n"
-printf "Enter your name of your site [${USER}]: "
+printf "Enter your name of your site [demotivational]: "
 read SITE_NAME
 if  [ "${SITE_NAME}" == "" ]; then
-    SITE_NAME=${USER}
+    SITE_NAME="demotivational"
 fi
 printf "Enter the domains of your site [127.0.0.1 localhost]: "
 read SITE_DOMAINS
@@ -102,10 +102,10 @@ read GOOGLE_SEARCH_KEY
 if  [ "${GOOGLE_SEARCH_KEY}" == "" ]; then
     GOOGLE_SEARCH_KEY="AIzaSyCCqmz99T_8_6_ZDgkZqoD2ACWG9wmXEdE"
 fi
-printf "Enter your database host [192.168.0.1]: "
+printf "Enter your Google Oauth Key: "
 read GOOGLE_OAUTH_KEY
 if  [ "${GOOGLE_OAUTH_KEY}" == "" ]; then
-    GOOGLE_OAUTH_KEY="192.168.0.1"
+    GOOGLE_OAUTH_KEY="248720560989-hre42f9t6is8evgqfhkr3hc8uqq7pg5c.apps.googleusercontent.com"
 fi
 printf "Enter your Google Oauth Secret : "
 read GOOGLE_OAUTH_SECRET
