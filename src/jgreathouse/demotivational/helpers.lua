@@ -50,6 +50,7 @@ local function new()
         return table.concat(query, sep)
     end
 
+    -- function for producing the search url for demotivational images
     function helpers.get_search_url()
         local base_url = 'https://www.googleapis.com/customsearch/v1?'
         local params = {

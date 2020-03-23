@@ -29,7 +29,6 @@
         $.post('/google_auth', payload)
             .done(function( data ) {
                 if (!data.error) {
-                    console.log(data);
                     location.href = '/';
                 } else {
                     $responseBox.addClass('alert alert-danger');

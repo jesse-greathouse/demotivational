@@ -28,12 +28,9 @@
         var $logout = $('#logout');
         if ($logout.length
             && ($logout.data('token-type') == $logout.data('facebook-type'))) {
-                console.log('doing login');
             FB.login(function() {
-                console.log('doing status');
                 FB.getLoginStatus(function(response) {
                     if (response && response.status === 'connected') {
-                        console.log('doing logout');
                         FB.logout(function(response) {
                             location.href = '/login';
                         });

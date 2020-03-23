@@ -16,14 +16,6 @@
             var selected = letsGetRandy(data.items);
             var selectedImage = letsGetRandy(selected.pagemap.cse_image);
             $demotivationalImage.attr('src', selectedImage.src);
-            $demotivationalImage.one('load', function() {}).each(function() {
-                if (this.complete) {
-                    $demotivationalPreloader.css('display', 'none');
-                    $demotivationalImage.css('display', 'block')
-                }
-            });
         });
-
-        
     }
 </script>
